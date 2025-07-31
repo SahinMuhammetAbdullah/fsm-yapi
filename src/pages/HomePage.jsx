@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react'; // useEffect'in import edildiğinden emin olun
 import SEO from '../components/SEO';
 import ActionCard from '../components/ActionCard';
-import ServiceCard from '../components/ServiceCard';
+// import ServiceCard from '../components/ServiceCard';
 import GalleryGrid from '../components/GalleryGrid';
 import ReviewCard from '../components/ReviewCard';
 import { Link } from 'react-router-dom';
+import ServiceFeature from '../components/ServiceFeature';
 
 // Data imports
 import { siteData, quickActionsData } from '../data/siteData';
-import { servicesData } from '../data/servicesData';
+// import { servicesData } from '../data/servicesData';
 import { galleryData } from '../data/galleryData';
 import { homePageData } from '../data/homePageData';
 import { mainPageReviews } from '../data/reviewsData';
+import { comprehensiveServicesData, expertiseAreas } from '../data/comprehensiveServicesData';
+
 
 // --- YENİ: Telefon Numarası Formatlama Yardımcı Fonksiyonu ---
 // Bu fonksiyon, "5551234567" gibi bir sayıyı "(555) 123 45 67" formatına çevirir.
@@ -133,11 +136,28 @@ const HomePage = () => {
 
             <section id="hizmetler" className="section" style={{ backgroundColor: '#fff' }}>
                 <div className="container">
-                    <h2 className="section-title">Temel Hizmetlerimiz</h2>
-                    <div className="services-grid">
-                        {Object.values(servicesData).map((service, index) => (
-                            <ServiceCard key={index} {...service} />
+                    <div className="section-title animate-on-scroll fade-in-up">
+                        <h2>"Çeyrek Asırlık Tecrübe"</h2>
+                        <p>Sunduğumuz modern ve verimli mühendislik çözümleri</p>
+                    </div>
+
+                    <div className="service-feature-list">
+                        {comprehensiveServicesData.map((service, index) => (
+                            <ServiceFeature 
+                                key={service.title}
+                                {...service} 
+                                isReversed={index % 2 !== 0}
+                            />
                         ))}
+                    </div>
+
+                    <div className="expertise-areas animate-on-scroll fade-in-up">
+                        <h4>Ana Uzmanlık Alanlarımız</h4>
+                        <div className="expertise-tags">
+                            {expertiseAreas.map(area => (
+                                <span key={area} className="expertise-tag">{area}</span>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
