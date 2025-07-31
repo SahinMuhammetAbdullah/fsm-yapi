@@ -1,0 +1,19 @@
+# ===================================================================
+# FSM YAPI web sitesi için robots.txt dosyası
+# ===================================================================
+
+# Tüm arama motoru botları için geçerli kurallar
+User-agent: *
+
+# Sitenin hiçbir bölümünü botlara yasaklama.
+# Bu, tüm sayfaların taranmasına ve indekslenmesine izin verdiğimiz anlamına gelir.
+Disallow:
+
+# Google'ın görselleri ve CSS/JS dosyalarını taramasına izin ver.
+# Bu, sitenin doğru bir şekilde render edilmesini sağlar.
+Allow: /
+
+# Sitemap dosyasının tam konumunu belirt.
+# ÖNEMLİ: Sitenizi yayına aldığınızda "https://www.fsmyapi.com" kısmını
+# kendi alan adınızla değiştirmeyi unutmayın!
+Sitemap: https://www.fsmyapi.com.tr/sitemap.xml
