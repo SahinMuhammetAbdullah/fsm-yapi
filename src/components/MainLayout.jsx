@@ -7,8 +7,6 @@ import FloatingCallButton from './FloatingCallButton';
 import { siteData, navLinks } from '../data/siteData';
 
 const MainLayout = () => {
-  // Bu hook, sayfa içi scroll sonrası scroll pozisyonunu en üste alır.
-  // react-router-dom v6'da varsayılan olarak bu özellik yoktur.
   const { pathname, hash, key } = useLocation();
   React.useEffect(() => {
     if (hash === '') {

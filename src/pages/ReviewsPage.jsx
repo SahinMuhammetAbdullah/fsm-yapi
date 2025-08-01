@@ -1,9 +1,11 @@
 import React from 'react';
+
 import SEO from '../components/SEO';
 import CallToAction from '../components/CallToAction';
+import ReviewCard from '../components/ReviewCard';
+
 import { siteData } from '../data/siteData';
 import { allReviewsData } from '../data/reviewsData';
-import ReviewCard from '../components/ReviewCard';
 
 const ReviewsPage = () => {
   return (
@@ -13,7 +15,6 @@ const ReviewsPage = () => {
         description="Müşterilerimizin hizmetlerimiz hakkındaki değerli görüşleri."
       />
       
-      {/* YENİ: Daha spesifik sınıf adları kullanıldı */}
       <div className="reviews-page-section">
         <div className="container">
 

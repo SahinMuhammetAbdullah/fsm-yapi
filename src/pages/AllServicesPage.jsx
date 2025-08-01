@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import SEO from '../components/SEO';
 import CallToAction from '../components/CallToAction';
-import ServiceFeature from '../components/ServiceFeature'; // Bu bileşeni burada kullanacağız
+import ServiceFeature from '../components/ServiceFeature';
 import { siteData } from '../data/siteData';
 import { comprehensiveServicesData } from '../data/comprehensiveServicesData';
 
 const AllServicesPage = () => {
-    // Animasyonları bu sayfada da etkinleştirelim
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -28,14 +27,12 @@ const AllServicesPage = () => {
                 description="Kombi, klima, ısı pompası, VRF, yerden ısıtma ve daha birçok alanda sunduğumuz tüm mühendislik çözümlerini keşfedin."
             />
 
-            {/* Sayfa Başlığı */}
             <div className="starry-header page-header">
                 <div className="content-wrapper">
                     <h1>Tüm Hizmetlerimiz</h1>
                 </div>
             </div>
 
-            {/* Hizmet Listesi */}
             <section className="section">
                 <div className="container">
                     <div className="service-feature-list">

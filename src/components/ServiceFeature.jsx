@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ServiceFeature = ({ title, description, imageUrl, isReversed = false }) => {
-  // Animasyon için sarmalayıcıya uygulanacak sınıf
   const animationClass = isReversed ? 'fade-in-right' : 'fade-in-left';
 
   return (

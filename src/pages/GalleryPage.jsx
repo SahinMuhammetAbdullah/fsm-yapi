@@ -1,9 +1,11 @@
 import React from 'react';
+
 import SEO from '../components/SEO';
 import GalleryGrid from '../components/GalleryGrid';
-import { siteData } from '../data/siteData';
-import { galleryData } from '../data/galleryData';
 import CallToAction from '../components/CallToAction';
+
+import { galleryData } from '../data/galleryData';
+import { siteData } from '../data/siteData';
 
 const GalleryPage = () => {
   return (

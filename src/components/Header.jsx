@@ -4,23 +4,18 @@ import { HashLink } from 'react-router-hash-link';
 
 const Header = ({ siteData, navLinks }) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    // YENİ: Hangi mobil alt menünün açık olduğunu tutan state
     const [openMobileSubmenu, setOpenMobileSubmenu] = useState(null);
 
     const closeMobileMenu = () => {
         setIsMobileMenuOpen(false);
-        setOpenMobileSubmenu(null); // Menü kapanınca alt menüyü de sıfırla
+        setOpenMobileSubmenu(null);
     };
 
-    // YENİ: Mobil menüde ana linke tıklama fonksiyonu
     const handleMobileParentClick = (e, link) => {
-        // Sadece mobil menüde ve dropdown varsa çalışsın
         if (window.innerWidth <= 992 && link.dropdown) {
-            e.preventDefault(); // Sayfaya gitmeyi engelle
-            // Eğer tıklanan alt menü zaten açıksa kapat, değilse aç
+            e.preventDefault(); 
             setOpenMobileSubmenu(openMobileSubmenu === link.text ? null : link.text);
         } else {
-            // Masaüstündeyse veya dropdown yoksa normal davran ve menüyü kapat
             closeMobileMenu();
         }
     };
@@ -50,12 +45,9 @@ const Header = ({ siteData, navLinks }) => {
 
                                 {link.dropdown && (
                                     <div className="dropdown-menu">
-                                        {/* YENİ: GRUPLARI DÖNEN MAP */}
                                         {link.dropdown.map((group) => (
                                             <div key={group.title} className="dropdown-group">
-                                                {/* Grup Başlığı */}
                                                 <h4 className="dropdown-title">{group.title}</h4>
-                                                {/* Gruba Ait Linkler */}
                                                 {group.links.map((item) => (
                                                     <Link key={item.text} to={item.to} onClick={closeMobileMenu}>
                                                         {item.text}

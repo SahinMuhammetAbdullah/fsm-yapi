@@ -1,10 +1,12 @@
 import React from 'react';
-import { useParams, Navigate, Link } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 import SEO from '../components/SEO';
+
 import ContactSidebar from '../components/ContactSidebar';
-import { serviceRegionsData } from '../data/serviceRegionsData';
-import { siteData } from '../data/siteData';
 import CallToAction from '../components/CallToAction';
+
+import { siteData } from '../data/siteData';
+import { serviceRegionsData } from '../data/serviceRegionsData';
 
 const ServiceRegionPage = () => {
     const { slug } = useParams();

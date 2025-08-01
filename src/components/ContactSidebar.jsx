@@ -1,7 +1,6 @@
 import React from 'react';
 import { siteData } from '../data/siteData';
 
-// Bileşen, prop olarak bölge adını (örneğin "Atakum") alacak
 const ContactSidebar = ({ regionName }) => {
   return (
     <aside className="contact-sidebar">

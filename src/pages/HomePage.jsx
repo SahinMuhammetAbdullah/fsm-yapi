@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
 import SEO from '../components/SEO';
 import ActionCard from '../components/ActionCard';
 import ServiceCard from '../components/ServiceCard';
 import GalleryGrid from '../components/GalleryGrid';
 import ReviewCard from '../components/ReviewCard';
-import { Link } from 'react-router-dom';
 
-// Data imports
 import { siteData, quickActionsData } from '../data/siteData';
 import { servicesData } from '../data/servicesData';
 import { galleryData } from '../data/galleryData';
@@ -50,28 +50,21 @@ const HomePage = () => {
             openMaps();
         }
     };
-    // --- İletişim Formu için State ve Fonksiyonlar (Güncellendi) ---
     const [formData, setFormData] = useState({
         name: '',
-        phone: '', // Bu state artık sadece rakamları tutacak, ör: "5551234567"
+        phone: '',
         service: 'Kombi Bakım & Onarım',
         message: ''
     });
 
-    // YENİ: Sadece telefon inputu için özel bir handle fonksiyonu
     const handlePhoneInputChange = (e) => {
-        // Girdiden harf, boşluk gibi istenmeyen karakterleri temizle
         const rawValue = e.target.value.replace(/\D/g, '');
 
-        // Kullanıcı '0' girmeye çalışırsa veya başka bir rakamla başlarsa onu yok say,
-        // numaranın her zaman '5' ile başlamasını dolaylı olarak sağla.
-        // 10 karakterden fazlasını alma.
         const limitedValue = rawValue.slice(0, 10);
 
         setFormData(prev => ({ ...prev, phone: limitedValue }));
     };
 
-    // Diğer form elemanları için genel handle fonksiyonu
     const handleFormChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
@@ -80,7 +73,6 @@ const HomePage = () => {
     const handleFormSubmit = (e) => {
         e.preventDefault();
 
-        // DEĞİŞTİ: Telefon numarası uzunluğunu kontrol et
         if (formData.phone.length !== 10) {
             alert('Lütfen geçerli bir telefon numarası giriniz (Örn: 555 123 45 67).');
             return;
@@ -90,7 +82,6 @@ const HomePage = () => {
             return;
         }
 
-        // DEĞİŞTİ: WhatsApp mesajı için telefon numarasının başına '0' ekle
         const fullPhoneNumber = '0' + formData.phone;
 
         let whatsappMessage = `Merhaba, FSM YAPI! Servis talebim var:\n\n` +
@@ -107,7 +98,6 @@ const HomePage = () => {
             setFormData({ name: '', phone: '', service: 'Kombi Bakım & Onarım', message: '' });
         }
     };
-    // --- Form Mantığı Bitişi ---
 
     return (
         <>
@@ -204,7 +194,6 @@ const HomePage = () => {
                         <p>Aşağıdaki formu doldurarak veya bilgilerimizi kullanarak bize hızla ulaşabilirsiniz.</p>
                     </div>
                     <div className="contact-grid">
-                        {/* Sol Sütun: Bilgiler ve Harita */}
                         <div className="contact-info">
                             <h3>İletişim Bilgileri</h3>
 
@@ -243,7 +232,6 @@ const HomePage = () => {
                             </div>
                         </div>
 
-                        {/* Sağ Sütun: WhatsApp Formu */}
                         <div className="contact-form">
                             <h3>Hızlı Servis Talebi</h3>
                             <form onSubmit={handleFormSubmit}>
@@ -253,19 +241,15 @@ const HomePage = () => {
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="phone">Telefon Numaranız</label>
-                                    {/* --- GÜNCELLENEN TELEFON INPUTU --- */}
                                     <input
                                         type="tel"
                                         id="phone"
                                         name="phone"
-                                        // value, formatlanmış halini gösterir
                                         value={formatPhoneNumber(formData.phone)}
-                                        // onChange, özel telefon fonksiyonunu kullanır
                                         onChange={handlePhoneInputChange}
                                         required
                                         placeholder="(5XX) XXX XX XX"
                                     />
-                                    {/* --- GÜNCELLEME SONU --- */}
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="service">İlgilendiğiniz Hizmet</label>
@@ -299,7 +283,6 @@ const HomePage = () => {
                     </div>
                     <div className="reviews-grid">
                         {mainPageReviews.map((review, index) => (
-                            // DEĞİŞİKLİK: Her karta tıklanacak URL'yi prop olarak gönderiyoruz
                             <ReviewCard key={index} {...review} url={siteData.googleReviewsUrl} />
                         ))}
                     </div>

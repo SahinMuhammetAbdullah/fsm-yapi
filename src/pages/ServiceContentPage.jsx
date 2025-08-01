@@ -1,10 +1,12 @@
 import React from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
+
 import SEO from '../components/SEO';
 import ContactSidebar from '../components/ContactSidebar';
+import CallToAction from '../components/CallToAction';
+
 import { servicesContentData } from '../data/servicesContentData'; 
 import { siteData } from '../data/siteData';
-import CallToAction from '../components/CallToAction';
 
 const ServiceContentPage = () => {
     const { slug } = useParams();

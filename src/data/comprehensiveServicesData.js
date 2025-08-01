@@ -2,7 +2,7 @@ export const comprehensiveServicesData = [
     {
         title: "Kombi ve Doğalgaz Sistemleri",
         description: "Evlerde ve iş yerlerinde kullanılan kombi ve doğalgaz sistemleri, konforlu bir ısınma sağlamak amacıyla yaygın olarak tercih edilir. Güvenli ve verimli çözümler sunuyoruz.",
-        imageUrl: "/assets/images/new-services/kombi-dogalgaz.jpg" // Bu yola uygun bir resim eklemelisiniz
+        imageUrl: "/assets/images/new-services/kombi-dogalgaz.jpg"
     },
     {
         title: "Isı Pompaları",
@@ -40,6 +40,3 @@ export const comprehensiveServicesData = [
         imageUrl: "/assets/images/new-services/sicak-hava.jpg"
     },
 ];
-
-// Görseldeki alt kategoriler için ayrı bir veri
-export const expertiseAreas = ["Enerji", "Elektromekanik", "İklimlendirme"];
