@@ -1268,7 +1268,7 @@ footer {
      12. MOBİL UYUMLULUK (MEDIA QUERIES)
      ========================================================================== */
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
 
   /* --- Navigasyonun mobile geçişi --- */
 
@@ -1382,9 +1382,23 @@ footer {
     margin-top: 3rem;
   }
 
+  #markalar,
   #iletisim,
   .quick-actions {
-    padding: 20px !important;
+    padding: 40px !important;
+  }
+
+  /* --- Grid Yapıları Tek Sütuna Düşüyor --- */
+  .actions-grid,
+  .services-grid,
+  .reviews-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .contact-grid {
+    gap: 2.5rem;
   }
 
 }
@@ -1457,7 +1471,7 @@ footer {
 
   .contact-info,
   .contact-form {
-    padding: 2rem;
+    padding: 1.4rem;
   }
 
   .service-card h3 {
@@ -1489,8 +1503,9 @@ footer {
     max-width: 100%;
   }
 
+  #markalar,
   #iletisim,
   .quick-actions {
-    padding: 1.5rem !important;
+    padding: 0.8rem !important;
   }
 }

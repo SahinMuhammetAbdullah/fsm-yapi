@@ -170,7 +170,7 @@ const HomePage = () => {
                 </div>
             </section>
 
-            <section id="markalar" className="brands-section" style={{ padding: '80px' }}>
+            <section id="markalar" className="brands-section" >
                 <div className="container">
                     <div className="section-title">
                         <h2>{homePageData.brandsSection.title}</h2>
