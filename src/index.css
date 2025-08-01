@@ -12,7 +12,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: #333;
-  background-color: #f8f9fa;
+  background-color: #f0f4f8;
   /* Varsayılan sayfa zemini */
 }
 
@@ -28,7 +28,7 @@ main {
 }
 
 .container {
-  width: 80%;
+  width: 90%;
   /* DEĞİŞTİ: Sabit değer yerine yüzde kullanıldı */
   max-width: 1800px;
   /* DEĞİŞTİ: Çok büyük ekranlarda bile bir sınır koyar */
@@ -237,7 +237,7 @@ header {
 .starry-header {
   background: #2c3e50;
   /* Koyu zemin rengi */
-  padding: 100px 0;
+  padding: 70px 0;
   position: relative;
   overflow: hidden;
   /* Dışarı taşan yıldızları gizler */
@@ -351,6 +351,11 @@ header {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
+#iletisim,
+.quick-actions {
+  padding: 60px !important;
+}
+
 .services-grid {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
@@ -460,13 +465,19 @@ header {
 
 /* --- Bölüme Özel Stiller --- */
 .quick-actions,
-.reviews-section,
+#hizmetler,
+#markalar,
 .contact {
-  background: #f8f9fa;
+  background-color: #eaedf0;
+  /* Tutarlılığı garanti altına al */
 }
 
-.brands-section {
-  background: #fff;
+#hakkimizda,
+#uygulama-alanlari,
+#galeri,
+.reviews-section {
+  background-color: #ffffff;
+  /* Tutarlılığı garanti altına al */
 }
 
 .about-text {
@@ -1068,8 +1079,10 @@ footer {
 .service-feature-list {
   display: flex;
   flex-direction: column;
-  gap: 4rem; /* Hizmetler arası boşluk - bu değeri geçici olarak 0 yapıp test edebilirsiniz */
-  margin-top: 3rem; /* YENİ: Başlık ile liste arasına boşluk ekledik */
+  gap: 4rem;
+  /* Hizmetler arası boşluk - bu değeri geçici olarak 0 yapıp test edebilirsiniz */
+  margin-top: 3rem;
+  /* YENİ: Başlık ile liste arasına boşluk ekledik */
 }
 
 .service-feature {
@@ -1084,7 +1097,7 @@ footer {
 }
 
 .service-feature-text {
-  flex: 1;
+  flex: 2;
   /* Metin alanı için kalan boşluğu doldur */
 }
 
@@ -1208,7 +1221,51 @@ footer {
 }
 
 /* ==========================================================================
-     11. MOBİL UYUMLULUK (MEDIA QUERIES)
+   11. HİZMET TANITIM (FEATURE) BÖLÜMÜ
+   ========================================================================== */
+
+.service-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.service-feature {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.service-feature.reversed {
+  flex-direction: row-reverse;
+}
+
+/* DEĞİŞİKLİK: Metin alanı artık esnek bir şekilde büyüyecek */
+.service-feature-text {
+  flex: 1;
+  /* Kalan tüm boşluğu doldur */
+}
+
+/* ... (h3 ve p stilleri aynı kalıyor) ... */
+
+/* DEĞİŞİKLİK: Resim alanı artık sabit genişlikte */
+.service-feature-image {
+  flex-shrink: 0;
+  /* Küçülmesini engelle */
+  width: 2500px;
+  /* Resmin kaplayacağı alanı px olarak belirle */
+}
+
+.service-feature-image img {
+  width: 50%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+     12. MOBİL UYUMLULUK (MEDIA QUERIES)
      ========================================================================== */
 
 @media (max-width: 992px) {
@@ -1216,7 +1273,7 @@ footer {
   /* --- Navigasyonun mobile geçişi --- */
 
   .container {
-    width: 90%;
+    width: 90% !important;
     margin: 0 auto;
   }
 
@@ -1325,13 +1382,18 @@ footer {
     margin-top: 3rem;
   }
 
+  #iletisim,
+  .quick-actions {
+    padding: 20px !important;
+  }
+
 }
 
 @media (max-width: 768px) {
 
   /* --- Genel Daraltmalar --- */
   .container {
-    width: 90%;
+    width: 90% !important;
     margin: 0 auto;
   }
 
@@ -1427,4 +1489,8 @@ footer {
     max-width: 100%;
   }
 
+  #iletisim,
+  .quick-actions {
+    padding: 1.5rem !important;
+  }
 }

@@ -10,9 +10,9 @@ const ServiceFeature = ({ title, description, imageUrl, isReversed = false }) =>
         <h3>{title}</h3>
         <p>{description}</p>
       </div>
-      {/* <div className="service-feature-image">
+      <div className="service-feature-image">
         <img src={imageUrl} alt={title} loading="lazy" />
-      </div> */}
+      </div>
     </div>
   );
 };

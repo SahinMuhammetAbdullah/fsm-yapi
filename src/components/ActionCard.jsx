@@ -1,11 +1,10 @@
 import React from 'react';
 
-const ActionCard = ({ icon, title, description, label, onClick, type, isEmergency = false }) => {
-    // Tıklanabilir olmayan kartlar için cursor stilini değiştir
-    const cardClass = `action-card ${isEmergency ? 'emergency' : ''} ${type === 'info' ? 'info-card' : ''}`;
+const ActionCard = ({ icon, title, description, label, onClick, isEmergency = false }) => {
+    const cardClass = isEmergency ? 'action-card emergency' : 'action-card';
     
     return (
-        <div className={cardClass} onClick={type !== 'info' ? onClick : null}>
+        <div className={cardClass} onClick={onClick}>
             <div className="action-icon"><i className={icon}></i></div>
             <h3>{title}</h3>
             <p>{description}</p>

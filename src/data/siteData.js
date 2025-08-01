@@ -44,6 +44,12 @@ export const navLinks = [
         // Dropdown artık bir obje dizisi, her obje bir grubu temsil ediyor
         dropdown: [
             {
+                title: "Genel Bakış", // Veya başlığı boş bırakabilirsiniz
+                links: [
+                    { text: "Hizmet Detayları", to: "/hizmetler" }
+                ]
+            },
+            {
                 // Grup 1: Bölgeler
                 title: "Hizmet Bölgelerimiz",
                 links: [
@@ -101,13 +107,6 @@ export const quickActionsData = [
         title: 'ADRESİMİZ',
         description: 'Ofisimizi Ziyaret Edin',
         label: 'Yol Tarifi Al',
-    },
-    {
-        type: 'info',
-        icon: 'fa-solid fa-clock',
-        title: 'ÇALIŞMA SAATLERİ',
-        description: `Hafta İçi & Cumartesi`, // Özet bilgi
-        label: `08:30 - 19:00`,
     },
 ];
 

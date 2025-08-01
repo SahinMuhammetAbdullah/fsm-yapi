@@ -26,7 +26,6 @@ const ReviewsPage = () => {
           </a>
         </div>
       </div>
-      {/* YENİ: CTA Bölümü eklendi */}
       <CallToAction />
     </>
   );

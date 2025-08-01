@@ -1,23 +1,18 @@
-import React, { useState, useEffect } from 'react'; // useEffect'in import edildiğinden emin olun
+import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
 import ActionCard from '../components/ActionCard';
-// import ServiceCard from '../components/ServiceCard';
+import ServiceCard from '../components/ServiceCard';
 import GalleryGrid from '../components/GalleryGrid';
 import ReviewCard from '../components/ReviewCard';
 import { Link } from 'react-router-dom';
-import ServiceFeature from '../components/ServiceFeature';
 
 // Data imports
 import { siteData, quickActionsData } from '../data/siteData';
-// import { servicesData } from '../data/servicesData';
+import { servicesData } from '../data/servicesData';
 import { galleryData } from '../data/galleryData';
 import { homePageData } from '../data/homePageData';
 import { mainPageReviews } from '../data/reviewsData';
-import { comprehensiveServicesData, expertiseAreas } from '../data/comprehensiveServicesData';
 
-
-// --- YENİ: Telefon Numarası Formatlama Yardımcı Fonksiyonu ---
-// Bu fonksiyon, "5551234567" gibi bir sayıyı "(555) 123 45 67" formatına çevirir.
 const formatPhoneNumber = (value) => {
     if (!value) return "";
     const phoneNumber = value.replace(/[^\d]/g, "");
@@ -32,11 +27,29 @@ const formatPhoneNumber = (value) => {
     }
     return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)} ${phoneNumber.slice(6, 8)} ${phoneNumber.slice(8, 10)}`;
 };
-// --- Formatlama Fonksiyonu Bitişi ---
 
 const HomePage = () => {
-    // ... (useEffect, openWhatsApp, openMaps fonksiyonları aynı kalıyor)
+    const openWhatsApp = () => {
+        const { whatsapp, whatsappMessage } = siteData.socials;
+        const url = `https://wa.me/${whatsapp}?text=${encodeURIComponent(whatsappMessage)}`;
+        window.open(url, '_blank');
+    };
 
+    const openMaps = () => {
+        const { mapsQuery } = siteData.address;
+        const url = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(mapsQuery)}`;
+        window.open(url, '_blank');
+    };
+
+    const handleActionClick = (action) => {
+        if (action.type === 'tel') {
+            window.location.href = `tel:${action.target.replace(/\s/g, '')}`;
+        } else if (action.type === 'whatsapp') {
+            openWhatsApp();
+        } else if (action.type === 'maps') {
+            openMaps();
+        }
+    };
     // --- İletişim Formu için State ve Fonksiyonlar (Güncellendi) ---
     const [formData, setFormData] = useState({
         name: '',
@@ -113,7 +126,7 @@ const HomePage = () => {
 
             <section className="quick-actions">
                 <div className="container">
-                    <h2 className="section-title">Hızlı İşlemler</h2>
+                    <div className="section-title"><h2>Hızlı İşlemler</h2></div>
                     <div className="actions-grid">
                         {quickActionsData.map((action, index) => (
                             <ActionCard
@@ -128,50 +141,40 @@ const HomePage = () => {
 
             <section id="hakkimizda" className="section">
                 <div className="container">
-                    <h2 className="section-title">{homePageData.aboutSection.title}</h2>
+                    <div className="section-title"><h2>{homePageData.aboutSection.title}</h2></div>
                     <p className="about-text">{homePageData.aboutSection.text1}</p>
                     <p className="about-text">{homePageData.aboutSection.text2}</p>
                 </div>
             </section>
 
-            <section id="hizmetler" className="section" style={{ backgroundColor: '#fff' }}>
+            <section id="hizmetler" className="section">
                 <div className="container">
-                    <div className="section-title animate-on-scroll fade-in-up">
-                        <h2>"Çeyrek Asırlık Tecrübe"</h2>
-                        <p>Sunduğumuz modern ve verimli mühendislik çözümleri</p>
-                    </div>
-
-                    <div className="service-feature-list">
-                        {comprehensiveServicesData.map((service, index) => (
-                            <ServiceFeature 
-                                key={service.title}
-                                {...service} 
-                                isReversed={index % 2 !== 0}
-                            />
+                    <div className="section-title"><h2>Temel Hizmetlerimiz</h2></div>
+                    <div className="services-grid">
+                        {Object.values(servicesData).map((service, index) => (
+                            <ServiceCard key={index} {...service} />
                         ))}
                     </div>
-
-                    <div className="expertise-areas animate-on-scroll fade-in-up">
-                        <h4>Ana Uzmanlık Alanlarımız</h4>
-                        <div className="expertise-tags">
-                            {expertiseAreas.map(area => (
-                                <span key={area} className="expertise-tag">{area}</span>
-                            ))}
-                        </div>
-                    </div>
+                </div>
+                <div className="text-center mt-4">
+                    <Link to="/hizmetler" className="btn-view-all">
+                        Detayları Görüntüle <i className="fas fa-arrow-right"></i>
+                    </Link>
                 </div>
             </section>
 
             <section id="uygulama-alanlari" className="section">
                 <div className="container" style={{ textAlign: 'center' }}>
-                    <h2 className="section-title">{homePageData.applicationAreas.title}</h2>
+                    <div className="section-title"><h2>{homePageData.applicationAreas.title}</h2></div>
                     <p className="about-text">{homePageData.applicationAreas.description}</p>
                 </div>
             </section>
 
-            <section id="markalar" className="brands-section">
+            <section id="markalar" className="brands-section" style={{ padding: '80px' }}>
                 <div className="container">
-                    <h2 className="section-title">{homePageData.brandsSection.title}</h2>
+                    <div className="section-title">
+                        <h2>{homePageData.brandsSection.title}</h2>
+                    </div>
                     <div className="brands-grid">
                         {homePageData.brandsSection.brands.map((brand, index) => (
                             <div key={index} className="brand-item">{brand}</div>
@@ -180,9 +183,11 @@ const HomePage = () => {
                 </div>
             </section>
 
-            <section id="galeri" className="section" style={{ backgroundColor: 'white' }}>
+            <section id="galeri" className="section">
                 <div className="container">
-                    <h2 className="section-title">Galeri</h2>
+                    <div class="section-title">
+                        <h2 className="section-title">Galeri</h2>
+                    </div>
                     <GalleryGrid images={galleryData.mainPageImages} />
                     <div className="text-center mt-4">
                         <Link to="/galeri" className="btn-view-all">
@@ -288,8 +293,8 @@ const HomePage = () => {
 
             <section id="yorumlar" className="reviews-section section">
                 <div className="container">
-                    <div className="section-title animate-on-scroll fade-in-up">
-                        <h2>Müşterilerimiz Ne Dedi?</h2>
+                    <div className="section-title">
+                        <h2 >Müşterilerimiz Ne Dedi?</h2>
                         <p>Google İşletme profilimizden gerçek müşteri yorumları.</p>
                     </div>
                     <div className="reviews-grid">

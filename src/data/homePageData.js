@@ -16,7 +16,7 @@ export const homePageData = {
         title: "Çözüm Ortağımız Olan Markalar",
         brands: [
             "Demirdöküm", "ECA", "Vaillant", "Viessmann", "Bosch", "Buderus",
-            "Ferroli", "Baymak", "Daikin", "Airfel", "Warmhaus", "Protherm", "Copa", "Ve Diğerleri"
+            "Ferroli", "Baymak", "Daikin", "Airfel", "Warmhaus", "Protherm", "Copa"
         ],
     },
 };

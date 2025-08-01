@@ -8,6 +8,7 @@ import GalleryPage from './pages/GalleryPage';
 import ReviewsPage from './pages/ReviewsPage'; // YENİ: Import et
 import ServiceRegionPage from './pages/ServiceRegionPage';
 import ServiceContentPage from './pages/ServiceContentPage';
+import AllServicesPage from './pages/AllServicesPage';
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,8 @@ const router = createBrowserRouter([
       {
         path: 'hizmet-alanlari/:slug',
         element: <ServiceContentPage />,
-      }
+      },
+      { path: 'hizmetler', element: <AllServicesPage /> }, // YENİ YOL
     ],
   },
 ]);
