@@ -9,8 +9,10 @@ const mainPageImages = [
     { thumb: '/assets/images/gallery/thumb/8.jpg', full: '/assets/images/gallery/full/8.jpg', alt: 'Proje 8' },
     { thumb: '/assets/images/gallery/thumb/9.jpg', full: '/assets/images/gallery/full/9.jpg', alt: 'Proje 9' },
     { thumb: '/assets/images/gallery/thumb/10.jpg', full: '/assets/images/gallery/full/10.jpg', alt: 'Proje 10' },
-
-
+    { thumb: '/assets/images/gallery/thumb/12.jpg', full: '/assets/images/gallery/full/12.jpg', alt: 'Proje 12' },
+    { thumb: '/assets/images/gallery/thumb/13.jpg', full: '/assets/images/gallery/full/13.jpg', alt: 'Proje 13' },
+    
+    
 ];
 
 export const galleryData = {
@@ -18,8 +20,6 @@ export const galleryData = {
     allImages: [
         ...mainPageImages,
         { thumb: '/assets/images/gallery/thumb/11.jpg', full: '/assets/images/gallery/full/11.jpg', alt: 'Proje 11' },
-        { thumb: '/assets/images/gallery/thumb/12.jpg', full: '/assets/images/gallery/full/12.jpg', alt: 'Proje 12' },
-        { thumb: '/assets/images/gallery/thumb/13.jpg', full: '/assets/images/gallery/full/13.jpg', alt: 'Proje 13' },
         { thumb: '/assets/images/gallery/thumb/14.jpg', full: '/assets/images/gallery/full/14.jpg', alt: 'Proje 14' },
         { thumb: '/assets/images/gallery/thumb/15.jpg', full: '/assets/images/gallery/full/15.jpg', alt: 'Proje 15' },
         { thumb: '/assets/images/gallery/thumb/16.jpg', full: '/assets/images/gallery/full/16.jpg', alt: 'Proje 16' },

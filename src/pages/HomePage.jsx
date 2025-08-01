@@ -185,7 +185,7 @@ const HomePage = () => {
 
             <section id="galeri" className="section">
                 <div className="container">
-                    <div class="section-title">
+                    <div className="section-title">
                         <h2 className="section-title">Galeri</h2>
                     </div>
                     <GalleryGrid images={galleryData.mainPageImages} />

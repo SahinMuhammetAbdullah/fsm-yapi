@@ -778,6 +778,30 @@ footer {
   animation: bounce 2s infinite ease-in-out;
 }
 
+.floating-call-btn {
+  display: none !important;
+  /* Varsayılan olarak (masaüstünde) gizli */
+  position: fixed;
+  bottom: 100px;
+  /* WhatsApp butonunun 70px üzerinde (30px + 60px + 10px boşluk) */
+  right: 30px;
+  background-color: #ff6b35;
+  /* Marka rengi */
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  /* İkon boyutu */
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+  z-index: 999;
+  animation: bounce 2.5s infinite ease-in-out;
+  /* Farklı bir ritimle zıplasın */
+}
+
 .btn-view-all {
   display: inline-block;
   padding: 0.8rem 2rem;
@@ -1265,7 +1289,89 @@ footer {
 }
 
 /* ==========================================================================
-     12. MOBİL UYUMLULUK (MEDIA QUERIES)
+   12. YORUMLAR SAYFASI (REVIEWS PAGE)
+   ========================================================================== */
+
+/* Sayfanın ana bölümü için genel boşluk ayarları */
+.reviews-page-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+  /* Açık gri bir zemin */
+}
+
+/* Sayfa başlığı ve tanıtım metni alanı */
+.reviews-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.reviews-intro .section-title h2 {
+  font-size: 2.8rem;
+}
+
+.reviews-intro .section-title p {
+  font-size: 1.2rem;
+  max-width: 700px;
+}
+
+/* Google Yorumları butonu için ek boşluk */
+.reviews-intro .btn-view-all {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  padding: 1rem 2.5rem;
+}
+
+.reviews-intro .btn-view-all i {
+  margin-right: 0.5rem;
+  /* İkonu metinden ayır */
+  font-size: 1.2rem;
+}
+
+
+/* Yorum Kartlarının Izgara Yapısı */
+.reviews-page-grid {
+  display: grid;
+  /* Mobilde tek sütun, tablette 2, masaüstünde 3 sütun */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+/* --- Yorum Kartı Stil İyileştirmeleri --- */
+/* (Bu kural mevcut .review-card kuralını ezer veya onunla birleşir,
+   daha spesifik olduğu için öncelik kazanır) */
+
+.reviews-page-grid .review-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
+  text-align: left;
+  /* Kart içindeki metinler sola hizalı olsun */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* Kartların aynı yükseklikte olmasını sağlar */
+}
+
+.reviews-page-grid .review-header {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.reviews-page-grid .review-text {
+  font-style: italic;
+  color: #444;
+  /* Daha koyu ve okunaklı metin rengi */
+  line-height: 1.8;
+  font-size: 1.05rem;
+  /* Biraz daha büyük font */
+  flex-grow: 1;
+  /* Metin alanının kalan boşluğu doldurmasını sağlar */
+}
+
+/* ==========================================================================
+     13. MOBİL UYUMLULUK (MEDIA QUERIES)
      ========================================================================== */
 
 @media (max-width: 1024px) {
@@ -1287,6 +1393,11 @@ footer {
 
   .mobile-menu-toggle {
     display: block;
+  }
+
+  .floating-call-btn {
+    display: flex !important;
+    /* none'dan flex'e değiştirerek görünür yap */
   }
 
   /* --- Açılan Mobil Menü --- */
@@ -1407,7 +1518,7 @@ footer {
 
   /* --- Genel Daraltmalar --- */
   .container {
-    width: 90% !important;
+    width: 70% !important;
     margin: 0 auto;
   }
 
@@ -1507,5 +1618,22 @@ footer {
   #iletisim,
   .quick-actions {
     padding: 0.8rem !important;
+  }
+
+  .reviews-intro .section-title h2 {
+    font-size: 2.2rem;
+  }
+
+  .reviews-intro .section-title p {
+    font-size: 1.1rem;
+  }
+
+  .reviews-page-grid {
+    grid-template-columns: 1fr;
+    /* Mobilde her zaman tek sütun */
+  }
+
+  .reviews-page-grid .review-card {
+    padding: 2rem;
   }
 }

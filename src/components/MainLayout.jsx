@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import WhatsAppButton from './WhatsAppButton';
+import FloatingCallButton from './FloatingCallButton';
 import { siteData, navLinks } from '../data/siteData';
 
 const MainLayout = () => {
@@ -23,6 +24,8 @@ const MainLayout = () => {
       </main>
       <Footer siteData={siteData} navLinks={navLinks} />
       <WhatsAppButton phone={siteData.socials.whatsapp} message={siteData.socials.whatsappMessage} />
+      <FloatingCallButton phone={siteData.phones.general1} />
+
     </>
   );
 };
