@@ -7,7 +7,7 @@
 
     <!-- Ana Sayfa -->
     <url>
-        <loc>https://www.fsmyapi.com.tr/</loc>
+        <loc>https://www.kombitaktir.com.tr/</loc>
         <lastmod>2025-07-31</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -15,19 +15,19 @@
 
     <!-- Statik Sayfalar -->
     <url>
-        <loc>https://www.fsmyapi.com.tr/hizmetler</loc>
+        <loc>https://www.kombitaktir.com.tr/hizmetler</loc>
         <lastmod>2025-07-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://www.fsmyapi.com.tr/galeri</loc>
+        <loc>https://www.kombitaktir.com.tr/galeri</loc>
         <lastmod>2025-07-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://www.fsmyapi.com.tr/yorumlar</loc>
+        <loc>https://www.kombitaktir.com.tr/yorumlar</loc>
         <lastmod>2025-07-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -35,25 +35,25 @@
 
     <!-- Hizmet Bölgeleri Sayfaları -->
     <url>
-        <loc>https://www.fsmyapi.com.tr/hizmet-bolgesi/atakum</loc>
+        <loc>https://www.kombitaktir.com.tr/hizmet-bolgesi/atakum</loc>
         <lastmod>2025-07-31</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.fsmyapi.com.tr/hizmet-bolgesi/ilkadim</loc>
+        <loc>https://www.kombitaktir.com.tr/hizmet-bolgesi/ilkadim</loc>
         <lastmod>2025-07-31</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.fsmyapi.com.tr/hizmet-bolgesi/canik</loc>
+        <loc>https://www.kombitaktir.com.tr/hizmet-bolgesi/canik</loc>
         <lastmod>2025-07-31</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.fsmyapi.com.tr/hizmet-bolgesi/tekkekoy</loc>
+        <loc>https://www.kombitaktir.com.tr/hizmet-bolgesi/tekkekoy</loc>
         <lastmod>2025-07-31</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
@@ -61,25 +61,25 @@
 
     <!-- Hizmet Alanları Sayfaları -->
     <url>
-        <loc>https://www.fsmyapi.com.tr/hizmet-alanlari/proje-taahhut</loc>
+        <loc>https://www.kombitaktir.com.tr/hizmet-alanlari/proje-taahhut</loc>
         <lastmod>2025-07-31</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.fsmyapi.com.tr/hizmhizmet-alanlariet/isi-pompasi</loc>
+        <loc>https://www.kombitaktir.com.tr/hizmhizmet-alanlariet/isi-pompasi</loc>
         <lastmod>2025-07-31</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.fsmyapi.com.tr/hizmet-alanlari/tamir-tadilat</loc>
+        <loc>https://www.kombitaktir.com.tr/hizmet-alanlari/tamir-tadilat</loc>
         <lastmod>2025-07-31</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.fsmyapi.com.tr/hizmet-alanlari/periyodik-bakim</loc>
+        <loc>https://www.kombitaktir.com.tr/hizmet-alanlari/periyodik-bakim</loc>
         <lastmod>2025-07-31</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>

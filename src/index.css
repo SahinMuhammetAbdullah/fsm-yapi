@@ -8,6 +8,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* YENİ: Yüzen butonların alttan mesafesi için bir değişken tanımlıyoruz */
+  --floating-button-bottom-spacing: 30px;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
@@ -28,7 +33,7 @@ main {
 }
 
 .container {
-  width: 90%;
+  width: 60%;
   /* DEĞİŞTİ: Sabit değer yerine yüzde kullanıldı */
   max-width: 1800px;
   /* DEĞİŞTİ: Çok büyük ekranlarda bile bir sınır koyar */
@@ -706,7 +711,7 @@ footer {
 
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
   margin-bottom: 2rem;
   text-align: left;
@@ -759,47 +764,45 @@ footer {
      7. YARDIMCI VE SABİT ELEMANLAR
      ========================================================================== */
 
-.whatsapp-btn {
+.whatsapp-btn,
+.floating-call-btn {
+  /* Ortak stilleri tek bir yerde topluyoruz */
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: #25d366;
-  color: white;
+  bottom: var(--floating-button-bottom-spacing);
+  /* Değişkeni burada kullanıyoruz */
   width: 60px;
   height: 60px;
+  color: white;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  font-size: 2.5rem;
   text-decoration: none;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
   z-index: 999;
+}
+
+/* --- WhatsApp Butonu --- */
+.whatsapp-btn {
+  right: 30px;
+  /* Varsayılan olarak sağda */
+  background: #25d366;
+  font-size: 2.5rem;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
   animation: bounce 2s infinite ease-in-out;
 }
 
+/* --- Yüzen Arama Butonu --- */
 .floating-call-btn {
-  display: none !important;
-  /* Varsayılan olarak (masaüstünde) gizli */
-  position: fixed;
-  bottom: 100px;
-  /* WhatsApp butonunun 70px üzerinde (30px + 60px + 10px boşluk) */
+  display: none;
+  /* Varsayılan olarak gizli */
   right: 30px;
+  /* Varsayılan olarak sağda */
+  bottom: calc(var(--floating-button-bottom-spacing) + 70px);
+  /* WhatsApp'ın 70px üzerinde */
   background-color: #ff6b35;
-  /* Marka rengi */
-  color: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
   font-size: 1.8rem;
-  /* İkon boyutu */
-  text-decoration: none;
   box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
-  z-index: 999;
   animation: bounce 2.5s infinite ease-in-out;
-  /* Farklı bir ritimle zıplasın */
 }
 
 .btn-view-all {
@@ -1371,7 +1374,166 @@ footer {
 }
 
 /* ==========================================================================
-     13. MOBİL UYUMLULUK (MEDIA QUERIES)
+   13. ANA SAYFA SLIDER
+   ========================================================================== */
+.main-slider-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  color: white;
+  background-color: #2c3e50;
+  /* Resim yüklenene kadar görünen arka plan */
+}
+
+.slick-slider,
+.slick-list,
+.slick-track,
+.slick-slide>div {
+  height: 100%;
+}
+
+.slide-item {
+  position: relative;
+  height: 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.slide-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.5);
+  transition: transform 10s ease-in-out;
+}
+
+.slick-active .slide-background {
+  transform: scale(1.1);
+}
+
+.slide-content {
+  position: relative;
+  z-index: 2;
+  /* Okların arkasında, noktaların üstünde */
+  max-width: 800px;
+  padding: 0 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.slide-content h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.slide-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.slide-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: #ff6b35;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-shadow: none;
+}
+
+.slide-button:hover {
+  background-color: #ff8c42;
+  transform: translateY(-3px);
+}
+
+
+/* --- Slider Okları --- */
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.custom-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.prev-arrow {
+  left: 30px;
+}
+
+.next-arrow {
+  right: 30px;
+}
+
+.custom-arrow svg {
+  width: 12px;
+  height: auto;
+}
+
+
+/* --- Slider Noktaları (Düzeltildi) --- */
+.slick-dots {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  /* İçeriğin üzerinde, okların altında */
+
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  cursor: pointer;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: transparent;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+/* BU KURAL HEM MASAÜSTÜ HEM MOBİL İÇİN ÇALIŞACAK */
+.slick-dots li.slick-active button {
+  background-color: white;
+}
+
+.slick-dots li button::before {
+  content: none;
+  /* İstenmeyen siyah noktayı kaldır */
+}
+
+/* ==========================================================================
+     14. MOBİL UYUMLULUK (MEDIA QUERIES)
      ========================================================================== */
 
 @media (max-width: 1024px) {
@@ -1512,13 +1674,31 @@ footer {
     gap: 2.5rem;
   }
 
+  .whatsapp-btn {
+    left: 20px;
+    /* Değeri biraz düşürelim */
+    right: auto;
+    bottom: var(--floating-button-bottom-spacing);
+    /* Değişkeni kullanmaya devam */
+  }
+
+  /* Telefon Butonu: Sağda Kalıyor ve HİZALANIYOR */
+  .floating-call-btn {
+    display: flex;
+    right: 20px;
+    /* Değeri biraz düşürelim */
+    left: auto;
+    /* ÖNEMLİ: Artık üst üste değiller, bu yüzden WhatsApp ile aynı 'bottom' değerini kullanıyorlar */
+    bottom: var(--floating-button-bottom-spacing);
+  }
+
 }
 
 @media (max-width: 768px) {
 
   /* --- Genel Daraltmalar --- */
   .container {
-    width: 70% !important;
+    width: 90% !important;
     margin: 0 auto;
   }
 
@@ -1550,6 +1730,7 @@ footer {
 
   .hero-supertitle {
     font-size: 0.9rem;
+    padding: 20px;
   }
 
   .hero h1 {
@@ -1635,5 +1816,36 @@ footer {
 
   .reviews-page-grid .review-card {
     padding: 2rem;
+  }
+
+  .main-slider-container {
+    height: 500px;
+  }
+
+  .slide-content h2 {
+    font-size: 2.5rem;
+  }
+
+  .slide-content p {
+    font-size: 1.2rem;
+  }
+
+  .custom-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .prev-arrow {
+    left: 15px;
+  }
+
+  .next-arrow {
+    right: 15px;
+  }
+
+  .slide-background {
+    background-position: center;
+    /* Varsayılan 'center' genellikle yeterlidir */
+
   }
 }

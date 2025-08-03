@@ -6,12 +6,16 @@ import ActionCard from '../components/ActionCard';
 import ServiceCard from '../components/ServiceCard';
 import GalleryGrid from '../components/GalleryGrid';
 import ReviewCard from '../components/ReviewCard';
+import MainSlider from '../components/MainSlider';
 
 import { siteData, quickActionsData } from '../data/siteData';
 import { servicesData } from '../data/servicesData';
 import { galleryData } from '../data/galleryData';
 import { homePageData } from '../data/homePageData';
 import { mainPageReviews } from '../data/reviewsData';
+import { sliderData } from '../data/sliderData';
+
+
 
 const formatPhoneNumber = (value) => {
     if (!value) return "";
@@ -113,6 +117,8 @@ const HomePage = () => {
                     <p>{homePageData.hero.subtitle}</p>
                 </div>
             </section>
+            
+            <MainSlider slides={sliderData} />
 
             <section className="quick-actions">
                 <div className="container">
