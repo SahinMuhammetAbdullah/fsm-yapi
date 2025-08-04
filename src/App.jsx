@@ -7,6 +7,7 @@ import ReviewsPage from './pages/ReviewsPage';
 import ServiceRegionPage from './pages/ServiceRegionPage';
 import ServiceContentPage from './pages/ServiceContentPage';
 import AllServicesPage from './pages/AllServicesPage';
+import ContactPage from './pages/ContactPage';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       { path: 'hizmet-bolgesi/:slug', element: <ServiceRegionPage /> },
       { path: 'hizmet-alanlari/:slug', element: <ServiceContentPage /> },
       { path: 'hizmetler', element: <AllServicesPage /> },
+      { path: 'iletisim', element: <ContactPage /> },
     ],
   },
 ]);

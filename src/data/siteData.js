@@ -119,7 +119,7 @@ export const footerLinks = {
             { text: 'Ana Sayfa', to: '/', type: 'link' },
             { text: 'Galeri', to: '/galeri', type: 'link' },
             { text: 'Yorumlar', to: '/yorumlar', type: 'link' },
-            { text: 'İletişim', to: '/#iletisim', type: 'hash' }
+            { text: 'İletişim', to: '/iletisim', type: 'hash' }
         ]
     },
     // İkinci sütun (yeni eklenen)

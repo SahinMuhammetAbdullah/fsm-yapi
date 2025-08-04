@@ -7,6 +7,7 @@ import ServiceCard from '../components/ServiceCard';
 import GalleryGrid from '../components/GalleryGrid';
 import ReviewCard from '../components/ReviewCard';
 import MainSlider from '../components/MainSlider';
+import ContactSection from '../components/ContactSection';
 
 import { siteData, quickActionsData } from '../data/siteData';
 import { servicesData } from '../data/servicesData';
@@ -117,7 +118,7 @@ const HomePage = () => {
                     <p>{homePageData.hero.subtitle}</p>
                 </div>
             </section>
-            
+
             <MainSlider slides={sliderData} />
 
             <section className="quick-actions">
@@ -193,93 +194,7 @@ const HomePage = () => {
                 </div>
             </section>
 
-            <section className="contact" id="iletisim">
-                <div className="container">
-                    <div className="section-title">
-                        <h2>Bizimle İletişime Geçin</h2>
-                        <p>Aşağıdaki formu doldurarak veya bilgilerimizi kullanarak bize hızla ulaşabilirsiniz.</p>
-                    </div>
-                    <div className="contact-grid">
-                        <div className="contact-info">
-                            <h3>İletişim Bilgileri</h3>
-
-                            <div className="contact-item">
-                                <div className="contact-icon"><i className="fas fa-phone-alt"></i></div>
-                                <div>
-                                    <strong>Telefon Hatlarımız</strong>
-                                    <a href={`tel:${siteData.phones.general1}`}>{siteData.phones.general1}</a>
-                                    <a href={`tel:${siteData.phones.general2}`}>{siteData.phones.general2}</a>
-                                </div>
-                            </div>
-
-                            <div className="contact-item">
-                                <div className="contact-icon"><i className="fab fa-whatsapp"></i></div>
-                                <div>
-                                    <strong>WhatsApp Destek</strong>
-                                    <a href={`https://wa.me/${siteData.socials.whatsapp}`} target="_blank" rel="noopener noreferrer">Mesaj Gönder</a>
-                                </div>
-                            </div>
-
-                            <div className="contact-item">
-                                <div className="contact-icon"><i className="fas fa-map-marker-alt"></i></div>
-                                <div>
-                                    <strong>Adres</strong>
-                                    <span>{siteData.address.line1}</span>
-                                    <span>{siteData.address.line2}</span>
-                                </div>
-                            </div>
-
-                            <div className="contact-map">
-                                <iframe
-                                    title="FSM YAPI Google Harita Konumu"
-                                    src={siteData.address.embedMapUrl}
-                                    allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade">
-                                </iframe>
-                            </div>
-                        </div>
-
-                        <div className="contact-form">
-                            <h3>Hızlı Servis Talebi</h3>
-                            <form onSubmit={handleFormSubmit}>
-                                <div className="form-group">
-                                    <label htmlFor="name">Ad Soyad</label>
-                                    <input type="text" id="name" name="name" value={formData.name} onChange={handleFormChange} required placeholder="Adınız ve soyadınız" />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="phone">Telefon Numaranız</label>
-                                    <input
-                                        type="tel"
-                                        id="phone"
-                                        name="phone"
-                                        value={formatPhoneNumber(formData.phone)}
-                                        onChange={handlePhoneInputChange}
-                                        required
-                                        placeholder="(5XX) XXX XX XX"
-                                    />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="service">İlgilendiğiniz Hizmet</label>
-                                    <select id="service" name="service" value={formData.service} onChange={handleFormChange}>
-                                        <option>Kombi Bakım & Onarım</option>
-                                        <option>Klima Bakım & Onarım</option>
-                                        <option>Mekanik Tesisat</option>
-                                        <option>Proje ve Taahhüt</option>
-                                        <option>Havalandırma Sistemleri</option>
-                                        <option>Diğer</option>
-                                    </select>
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="message">Eklemek İstedikleriniz (İsteğe Bağlı)</label>
-                                    <textarea id="message" name="message" value={formData.message} onChange={handleFormChange} rows="4" placeholder="Cihaz modeli, arıza detayı..."></textarea>
-                                </div>
-                                <button type="submit" className="btn-whatsapp">
-                                    <i className="fab fa-whatsapp"></i> WhatsApp ile Gönder
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <ContactSection />
 
             <section id="yorumlar" className="reviews-section section">
                 <div className="container">
