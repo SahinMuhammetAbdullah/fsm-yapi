@@ -38,7 +38,6 @@ const ServiceRegionPage = () => {
                                 <li>Hızlı Keşif ve Projelendirme</li>
                                 <li>Yüksek Verimli Cihaz Seçenekleri</li>
                                 <li>Profesyonel Montaj ve Tesisat</li>
-                                <li>Periyodik Bakım ve Acil Servis</li>
                             </ul>
                             <p>
                                 FSM Yapı güvencesiyle, {regionData.title.split(' ')[0]} bölgesindeki ısıtma ve soğutma ihtiyaçlarınız için
