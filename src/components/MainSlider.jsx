@@ -41,8 +41,9 @@ const MainSlider = ({ slides }) => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 1000,
-    autoplaySpeed: 7000,
+    speed: 1000, 
+    autoplay: true,
+    autoplaySpeed: 5000,
     pauseOnHover: true,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -57,17 +58,17 @@ const MainSlider = ({ slides }) => {
       <Slider {...settings}>
         {slides.map((slide) => {
           // Bu mantık artık hatasız çalışacaktır
-          const imageUrl = isMobile && slide.backgroundImageUrlMobile 
-            ? slide.backgroundImageUrlMobile 
+          const imageUrl = isMobile && slide.backgroundImageUrlMobile
+            ? slide.backgroundImageUrlMobile
             : slide.backgroundImageUrl;
 
           return (
             <div key={slide.id} className="slide-item">
-              <div 
-                className="slide-background" 
+              <div
+                className="slide-background"
                 style={{ backgroundImage: `url(${imageUrl})` }}
               ></div>
-              
+
               <div className="slide-content">
                 <h2>{slide.title}</h2>
                 <p>{slide.description}</p>

@@ -7,7 +7,6 @@ export const servicesContentData = {
             "Doğalgaz Tesisat Projeleri",
             "Isıtma ve Soğutma Sistemi Tasarımı",
             "Havalandırma Projeleri",
-            "Sıhhi Tesisat Projelendirme",
             "İhale Dosyası ve Keşif Özeti Hazırlama"
         ]
     },
