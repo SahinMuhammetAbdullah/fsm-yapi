@@ -1,5 +1,3 @@
-// src/data/sliderData.js
-
 const brands = [
     "Demirdöküm", "ECA", "Vaillant", "Viessmann", "Bosch", "Buderus",
     "Ferroli", "Baymak", "Daikin", "Airfel", "Warmhaus", "Protherm", "Copa"

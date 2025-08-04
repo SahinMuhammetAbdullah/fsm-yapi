@@ -23,28 +23,4 @@ export const servicesContentData = {
             "Bakım ve Servis Hizmetleri"
         ]
     },
-    "tamir-tadilat": {
-        title: "Tamir & Tadilat Çözümleri",
-        imageUrl: "/assets/images/services/tamir.jpg",
-        description: "Mevcut kombi, klima, doğalgaz ve mekanik tesisat sistemlerinizde meydana gelen her türlü arıza için hızlı ve güvenilir tamir hizmeti sunuyoruz. Sertifikalı teknisyenlerimiz, en güncel ekipmanlarla arıza tespiti yaparak kalıcı çözümler üretir.",
-        details: [
-            "7/24 Acil Kombi Servisi",
-            "Klima Gaz Dolumu ve Arıza Onarımı",
-            "Doğalgaz Kaçak Tespiti ve Onarımı",
-            "Petek ve Tesisat Temizliği",
-            "Komple Tesisat Yenileme ve Tadilatı"
-        ]
-    },
-    "periyodik-bakim": {
-        title: "Periyodik Bakım Hizmetleri",
-        imageUrl: "/assets/images/services/bakim.jpg",
-        description: "Isıtma ve soğutma sistemlerinizin ömrünü uzatmak, verimliliğini artırmak ve beklenmedik arızaları önlemek için profesyonel periyodik bakım şarttır. Yıllık bakım anlaşmaları ile cihazlarınızın güvenliğini ve performansını garanti altına alıyoruz.",
-        details: [
-            "Detaylı Kombi ve Kazan Bakımı",
-            "Klima İç ve Dış Ünite Temizliği",
-            "Tesisat Sızdırmazlık ve Basınç Kontrolleri",
-            "Filtre Değişimi ve Sistem Ayarları",
-            "Verimlilik Raporu ve Enerji Danışmanlığı"
-        ]
-    }
 };

@@ -65,8 +65,6 @@ export const navLinks = [
                 links: [
                     { text: "Proje & Taahhüt", to: "/hizmet-alanlari/proje-taahhut" },
                     { text: "Isı Pompası Sistemleri", to: "/hizmet-alanlari/isi-pompasi" },
-                    { text: "Tamir & Tadilat", to: "/hizmet-alanlari/tamir-tadilat" },
-                    { text: "Periyodik Bakım", to: "/hizmet-alanlari/periyodik-bakim" },
                 ]
             }
         ]
@@ -138,8 +136,6 @@ export const footerLinks = {
         links: [
             { text: "Proje & Taahhüt", to: "/hizmet-alanlari/proje-taahhut" },
             { text: "Isı Pompası Sistemleri", to: "/hizmet-alanlari/isi-pompasi" },
-            { text: "Tamir & Tadilat", to: "/hizmet-alanlari/tamir-tadilat" },
-            { text: "Periyodik Bakım", to: "/hizmet-alanlari/periyodik-bakim" },
         ]
     }
 };
