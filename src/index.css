@@ -1536,6 +1536,42 @@ footer {
      14. MOBİL UYUMLULUK (MEDIA QUERIES)
      ========================================================================== */
 
+@media (max-width: 1920px) {
+  .container {
+    width: 80%;
+  }
+  .section,.quick-actions{
+    padding: 30px !important;
+  }
+}
+
+@media (max-width: 1444) {
+  .container {
+    width: 85%;
+
+  }
+  .nav-container {
+    display: none;
+  }
+
+}
+
+@media (max-width: 1280px) {
+  .container {
+    width: 90%;
+  }
+
+  .emergency-call {
+    display: none;
+  }
+
+  .floating-call-btn {
+    display: flex !important;
+    /* none'dan flex'e değiştirerek görünür yap */
+  }
+
+}
+
 @media (max-width: 1024px) {
 
   /* --- Navigasyonun mobile geçişi --- */
