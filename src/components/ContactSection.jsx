@@ -88,7 +88,7 @@ const ContactSection = () => {
                 </div>
 
                 <div className="contact-form">
-                    <h3>Hızlı Servis Talebi</h3>
+                    <h3>Hızlı Bilgi Talebi</h3>
                     <form onSubmit={handleFormSubmit}>
                         <div className="form-group">
                             <label htmlFor="name">Ad Soyad</label>
@@ -109,8 +109,8 @@ const ContactSection = () => {
                         <div className="form-group">
                             <label htmlFor="service">İlgilendiğiniz Hizmet</label>
                             <select id="service" name="service" value={formData.service} onChange={handleFormChange}>
-                                <option>Kombi Bakım & Onarım</option>
-                                <option>Klima Bakım & Onarım</option>
+                                <option>Kombi Bilgi & Fiyat</option>
+                                <option>Klima Bilgi & Fiyat</option>
                                 <option>Mekanik Tesisat</option>
                                 <option>Proje ve Taahhüt</option>
                                 <option>Havalandırma Sistemleri</option>

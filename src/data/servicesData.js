@@ -23,16 +23,4 @@ export const servicesData = {
             "Tesisat güvenlik kontrolleri ve sızdırmazlık testleri",
         ],
     },
-    "bakim-onarim": {
-        icon: "fa-solid fa-screwdriver-wrench",
-        title: "Bakım & Onarım",
-        description: "Mevcut tesisatınızın periyodik bakımı ve acil arıza durumları için 7/24 yanınızdayız.",
-        items: [
-            "Yıllık periyodik bakım hizmetleri",
-            "Detaylı arıza tespiti ve onarım",
-            "Gaz kaçağı tespiti ve acil müdahale",
-            "Sistem basınç testleri ve raporlama",
-            "7/24 kesintisiz acil servis hizmeti",
-        ],
-    },
 };

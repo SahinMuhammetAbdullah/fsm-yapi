@@ -5,7 +5,7 @@ export const siteData = {
     logoUrl: "/assets/logo.png",
     phones: {
         general1: "0362 505 51 51",
-        general2: "0362 800 82 52",
+        general2: "0543 590 94 95",
     },
     emails: {
         info: "info@fsmyapi.com",
@@ -28,7 +28,7 @@ export const siteData = {
     ],
     googleReviewsUrl: "https://www.google.com/maps/place/Fsm+Yap%C4%B1+Do%C4%9Falgaz+-+Kombi+-+Petek+Tesisat/@41.2835852,36.3072461,17z/data=!4m8!3m7!1s0x408877e0d33370ff:0x894ff18afe3e06c8!8m2!3d41.2835852!4d36.3072461!9m1!1b1!16s%2Fg%2F11cjqb95x_?hl=tr&entry=ttu&g_ep=EgoyMDI1MDcyOC4wIKXMDSoASAFQAw%3D%3D",
     socials: {
-        whatsapp: "903625055151",
+        whatsapp: "905435909495",
         whatsappMessage: "Merhaba FSM YAPI, ısıtma ve soğutma hizmetleriniz hakkında bilgi almak istiyorum.",
     },
     copyright: `© ${new Date().getFullYear()} FSM Yapı Mim. Müh. İnş. Taah. San. Tic. Lim. Şti. Tüm hakları saklıdır.`,
