@@ -64,7 +64,14 @@ export const navLinks = [
                 title: "Hizmet Alanlarımız",
                 links: [
                     { text: "Proje & Taahhüt", to: "/hizmet-alanlari/proje-taahhut" },
+                    { text: "Kombi ve Şofben", to: "/hizmet-alanlari/kombi-sofben" },
                     { text: "Isı Pompası Sistemleri", to: "/hizmet-alanlari/isi-pompasi" },
+                    { text: "Klima Sistemleri", to: "/hizmet-alanlari/klima-sistemleri" },
+                    { text: "Radyant Isıtma", to: "/hizmet-alanlari/radyant-isitma" },
+                    { text: "Merkezi Sistemler", to: "/hizmet-alanlari/merkezi-sistemler" },
+                    { text: "VRF Ticari Klimalar", to: "/hizmet-alanlari/vrf-sistemleri" },
+                    { text: "Yerden Isıtma", to: "/hizmet-alanlari/yerden-isitma" },
+                    { text: "Sıcak Hava Üreticileri", to: "/hizmet-alanlari/sicak-hava-ureticileri" },
                 ]
             }
         ]
@@ -135,7 +142,14 @@ export const footerLinks = {
         title: 'Hizmet Alanlarımız',
         links: [
             { text: "Proje & Taahhüt", to: "/hizmet-alanlari/proje-taahhut" },
+            { text: "Kombi ve Şofben", to: "/hizmet-alanlari/kombi-sofben" },
             { text: "Isı Pompası Sistemleri", to: "/hizmet-alanlari/isi-pompasi" },
+            { text: "Klima Sistemleri", to: "/hizmet-alanlari/klima-sistemleri" },
+            { text: "Radyant Isıtma", to: "/hizmet-alanlari/radyant-isitma" },
+            { text: "Merkezi Sistemler", to: "/hizmet-alanlari/merkezi-sistemler" },
+            { text: "VRF Ticari Klimalar", to: "/hizmet-alanlari/vrf-sistemleri" },
+            { text: "Yerden Isıtma", to: "/hizmet-alanlari/yerden-isitma" },
+            { text: "Sıcak Hava Üreticileri", to: "/hizmet-alanlari/sicak-hava-ureticileri" },
         ]
     }
 };

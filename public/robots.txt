@@ -14,6 +14,6 @@ Disallow:
 Allow: /
 
 # Sitemap dosyasının tam konumunu belirt.
-# ÖNEMLİ: Sitenizi yayına aldığınızda "https://www.fsmyapi.com" kısmını
+# ÖNEMLİ: Sitenizi yayına aldığınızda "https://www.kombitaktir.com.tr" kısmını
 # kendi alan adınızla değiştirmeyi unutmayın!
 Sitemap: https://www.kombitaktir.com.tr/sitemap.xml

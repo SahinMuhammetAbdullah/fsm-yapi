@@ -629,6 +629,109 @@ header {
   flex-grow: 1;
 }
 
+.service-page-content {
+  background-color: #fff;
+}
+
+.service-main-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.service-description h2 {
+  font-size: 2.2rem;
+  color: #1e3c72;
+  margin-bottom: 1.5rem;
+}
+
+.service-description p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.service-subheading {
+  font-size: 1.6rem;
+  color: #1e3c72;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.service-details-list,
+.service-numbered-list {
+  padding-left: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.service-details-list li,
+.service-numbered-list li {
+  font-size: 1.05rem;
+  color: #333;
+  margin-bottom: 0.8rem;
+  line-height: 1.7;
+}
+
+.service-summary {
+  background-color: #f0f4f8;
+  border-left: 4px solid #ff6b35;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+}
+
+.service-summary h4 {
+  color: #1e3c72;
+  margin-bottom: 1rem;
+}
+
+.service-summary ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.service-highlight {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: #fffbe6;
+  border: 1px solid #ffe58f;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.service-highlight i {
+  font-size: 2rem;
+  color: #f9c74f;
+}
+
+.service-highlight p {
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.service-cta {
+  background-color: #f0f4f8;
+  padding: 2.5rem;
+  border-radius: 15px;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.service-cta h3 {
+  font-size: 1.8rem;
+  color: #1e3c72;
+  margin-bottom: 1rem;
+}
+
+.service-cta p {
+  color: #555;
+  margin-bottom: 2rem;
+}
+
 /* ==========================================================================
      5. İLETİŞİM FORMU VE HARİTA
      ========================================================================== */
@@ -1066,17 +1169,26 @@ footer {
   margin-bottom: 0.5rem;
 }
 
-/* Kenar Çubuğu (Sidebar) */
+/* Kenar çubuğu için temel stil */
 .contact-sidebar {
   background: white;
   padding: 2.5rem 2rem;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   text-align: center;
+}
+
+/* Sayfa içinde CTA olarak kullanıldığında */
+.cta-sidebar {
+  margin-top: 3rem;
+  background-color: #f0f4f8;
+  /* Farklı bir arka plan */
+}
+
+/* Sayfa düzeni içinde yapışkan (sticky) sidebar */
+.page-layout>.contact-sidebar {
   position: sticky;
-  /* Sayfa kaydırıldıkça sabit kalır */
   top: 120px;
-  /* Header yüksekliğine göre boşluk */
 }
 
 .contact-sidebar .sidebar-icon {
@@ -1094,6 +1206,28 @@ footer {
 .contact-sidebar p {
   color: #555;
   margin-bottom: 1.5rem;
+}
+
+.service-main-image {
+  width: 100%;
+  /* DEĞİŞİKLİK: 'height' ve 'max-height' kaldırıldı */
+
+  /* YENİ: Konteynerin en-boy oranını 3:2 (1536x1024) olarak ayarla */
+  aspect-ratio: 3 / 2;
+
+  border-radius: 15px;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  /* Radius'un içindeki resmi sarması için */
+}
+
+/* YENİ: İçindeki resmin bu konteynere tam sığmasını sağla */
+.service-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Artık resim konteynere tam sığdığı için 'cover' güvenle kullanılabilir */
 }
 
 .btn-sidebar {
@@ -1205,17 +1339,75 @@ footer {
   line-height: 1.7;
 }
 
+.btn-feature-details {
+  display: inline-block;
+  margin-top: 1.5rem;
+  /* Üstündeki metinden boşluk bırak */
+  padding: 0.7rem 1.5rem;
+  background-color: transparent;
+  color: #1e3c72;
+  /* Ana renklerden biri */
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  border: 2px solid #e0e5ea;
+  /* Hafif bir sınır */
+  transition: all 0.3s ease;
+}
+
+.btn-feature-details:hover {
+  background-color: #ff6b35;
+  /* Marka rengi */
+  color: white;
+  border-color: #ff6b35;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-feature-details i {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-feature-details:hover i {
+  transform: translateX(5px);
+}
+
 .service-feature-image {
   flex: 1;
-  max-width: 50%;
-  /* Resmin çok büyümesini engelle */
+  /* max-width: 50% kuralı kalabilir veya flex-basis'e çevrilebilir */
+
+  /* YENİ: Burada da aynı en-boy oranını uyguluyoruz */
+  aspect-ratio: 3 / 2;
+  border-radius: 15px;
+  /* Radius'u doğrudan konteynere verelim */
+  overflow: hidden;
+  /* İçindeki resmin taşmasını engelle */
 }
 
 .service-feature-image img {
   width: 100%;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  /* Konteynere tam olarak yayılmasını sağla */
+  object-fit: cover;
+  /* Bu, oranı korurken küçük boşlukları doldurur */
+  border-radius: 0;
+  /* Resmin kendi radius'unu sıfırla */
+  box-shadow: none;
+  /* Gölgeyi ana konteynere taşıdık */
+}
+
+.service-feature.text-only {
+  justify-content: center;
+  /* İçeriği yatayda ortala */
+  text-align: center;
+  /* Metni ortala */
+}
+
+.service-feature.text-only .service-feature-text h3::after {
+  left: 50%;
+  transform: translateX(-50%);
+  /* Başlık altı çizgiyi ortala */
 }
 
 /* Uzmanlık Alanları */

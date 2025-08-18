@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <!-- 
-        ÖNEMLİ: Sitenizi yayına aldığınızda aşağıdaki tüm "https://www.fsmyapi.com.tr"
+        ÖNEMLİ: Sitenizi yayına aldığınızda aşağıdaki tüm "https://www.kombitaktir.com.tr"
         alan adlarını kendi alan adınızla değiştirmelisiniz.
     -->
 
@@ -68,15 +68,56 @@
     <!-- Hizmet Alanları Sayfaları -->
     <url>
         <loc>https://www.kombitaktir.com.tr/hizmet-alanlari/proje-taahhut</loc>
-        <lastmod>2025-07-31</lastmod>
+        <lastmod>2025-08-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.kombitaktir.com.tr/hizmhizmet-alanlariet/isi-pompasi</loc>
-        <lastmod>2025-07-31</lastmod>
+        <loc>https://www.kombitaktir.com.tr/hizmet-alanlari/kombi-sofben</loc>
+        <lastmod>2025-08-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
-
+    <url>
+        <loc>https://www.kombitaktir.com.tr/hizmet-alanlari/isi-pompasi</loc>
+        <lastmod>2025-08-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.kombitaktir.com.tr/hizmet-alanlari/klima-sistemleri</loc>
+        <lastmod>2025-08-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.kombitaktir.com.tr/hizmet-alanlari/radyant-isitma</loc>
+        <lastmod>2025-08-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.kombitaktir.com.tr/hizmet-alanlari/merkezi-sistemler</loc>
+        <lastmod>2025-08-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.kombitaktir.com.tr/hizmet-alanlari/vrf-sistemleri</loc>
+        <lastmod>2025-08-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.kombitaktir.com.tr/hizmet-alanlari/yerden-isitma</loc>
+        <lastmod>2025-08-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.kombitaktir.com.tr/hizmet-alanlari/sicak-hava-ureticileri</loc>
+        <lastmod>2025-08-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
